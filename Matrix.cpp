@@ -30,7 +30,7 @@ Matrix::Matrix(const Matrix& other)
 
 Matrix& Matrix::operator=(const Matrix& other)
 {
-	if(this == other) return *this;
+	if(this == &other) return *this;
 	
 	delete[] lines;
 	N = other.N;

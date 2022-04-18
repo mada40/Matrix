@@ -19,7 +19,6 @@ Matrix::Matrix(int n, int m)
 
 Matrix::Matrix(const Matrix& other)
 {
-	delete[] lines;
 	N = other.N;
 	M = other.M;
 	lines = new MyVector[N];
@@ -31,6 +30,8 @@ Matrix::Matrix(const Matrix& other)
 
 Matrix& Matrix::operator=(const Matrix& other)
 {
+	if(this == other) return *this;
+	
 	delete[] lines;
 	N = other.N;
 	M = other.M;
